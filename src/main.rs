@@ -1,6 +1,9 @@
-mod palindrome;
+mod string;
 
 fn main() {
-    assert_eq!(true, palindrome::palindrome("racecar"));
-    assert_eq!(false, palindrome::palindrome("amila"));
+    // String
+    assert_eq!(true, string::palindrome("racecar"));
+    assert_eq!(false, string::palindrome("amila"));
+    assert_eq!(true, string::palindrome("awwa"));
+    assert_eq!(true, string::palindrome("awa"));
 }
