@@ -1,1 +1,9 @@
+# Logs
+logs
+*.log
+
+# OSX
+.DS_Store
+
+# Rust
 target
