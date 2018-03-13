@@ -18,6 +18,16 @@ pub fn euclidean_gcd(a: u32, b: u32) -> u32 {
     }
 }
 
+pub fn is_prime(a: u32) -> bool {
+    for b in 2..a {
+        match euclidean_gcd(a, b) == 1 {
+            true => continue,
+            false => return false
+        }
+    }
+    true
+}
+
 #[cfg(test)]
 mod test {
     use super::*;
@@ -28,5 +38,14 @@ mod test {
         assert_eq!(euclidean_gcd(5, 15), 5);
         assert_eq!(euclidean_gcd(3, 15), 3);
         assert_eq!(euclidean_gcd(7, 11), 1);
+    }
+
+    #[test]
+    pub fn test_prime() {
+        assert_eq!(is_prime(5), true);
+        assert_eq!(is_prime(11), true);
+        assert_eq!(is_prime(12), false);
+        assert_eq!(is_prime(21), false);
+        assert_eq!(is_prime(541), false);
     }
 }
