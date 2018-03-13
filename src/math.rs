@@ -19,6 +19,9 @@ pub fn euclidean_gcd(a: u32, b: u32) -> u32 {
 }
 
 pub fn is_prime(a: u32) -> bool {
+    if a == 1 {
+        return true;
+    }
     for b in 2..a {
         match euclidean_gcd(a, b) == 1 {
             true => continue,
